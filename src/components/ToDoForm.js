@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Header from "../static/Header";
+import Footer from "../static/Footer";
 
 const ToDoForm = ({ addTodo }) => {
   const [task, setTask] = useState("");
@@ -10,7 +12,10 @@ const ToDoForm = ({ addTodo }) => {
     setDescription("");
   };
   return (
+    <>
+    <Header />
     <div className="text-center">
+        <h6>Welcome</h6>
       <form onSubmit={handleSubmit}>
         <h6 className="m-5 text-4xl font-sans text-gray-300">Add To-do</h6>
         <input
@@ -37,6 +42,8 @@ const ToDoForm = ({ addTodo }) => {
         </div>
       </form>
     </div>
+    <Footer />
+    </>
   );
 };
 
