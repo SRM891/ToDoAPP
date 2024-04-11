@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Footer from "../static/Footer";
 import { useNavigate } from "react-router-dom";
-const ToDoSignUp = () => {
+const ToDoSignUp = ({signUpData}) => {
   const details = {
     firstName: "",
     lastName: "",
@@ -14,7 +14,7 @@ const ToDoSignUp = () => {
   const [user, setUser] = useState(details);
   const submitSignUpForm = (e) => {
     e.preventDefault();
-    // userData(user);
+    signUpData(user);
     console.log(user);
     navigate("/add-todo");
   };
@@ -26,7 +26,7 @@ const ToDoSignUp = () => {
           SIGN-UP
         </h1>
         <form onSubmit={submitSignUpForm} id="userDetails">
-          <div className="border-4 p-3 border-solid  border-indigo-200 border-b-indigo-400 hover:border-indigo-500 rounded-2xl bg-gray-300">
+          <div className="border-4 p-3 border-solid  border-indigo-200 border-b-indigo-400 hover:border-indigo-500 rounded-2xl">
             <label className="text-gray-700 font-serif font-semibold mr-2">
               First Name:
             </label>
@@ -39,7 +39,7 @@ const ToDoSignUp = () => {
               required
             />
           </div>
-          <div className="border-4  p-3 border-solid border-indigo-200 border-b-indigo-400 hover:border-indigo-500 rounded-2xl bg-gray-300">
+          <div className="border-4  p-3 border-solid border-indigo-200 border-b-indigo-400 hover:border-indigo-500 rounded-2xl">
             <label className="text-gray-700 font-serif font-semibold mr-2">
               Last Name:
             </label>
@@ -52,7 +52,7 @@ const ToDoSignUp = () => {
               required
             />
           </div>
-          <div className="border-4 p-3 border-solid border-indigo-200 border-b-indigo-400 hover:border-indigo-500 rounded-2xl bg-gray-300">
+          <div className="border-4 p-3 border-solid border-indigo-200 border-b-indigo-400 hover:border-indigo-500 rounded-2xl">
             <label className="text-gray-700 font-serif font-semibold mr-2">
               Gender:
             </label>
@@ -71,7 +71,7 @@ const ToDoSignUp = () => {
               <option value="Other">Other</option>
             </select>
           </div>
-          <div className="border-4 p-3 border-solid border-indigo-200 border-b-indigo-400 hover:border-indigo-500 rounded-2xl bg-gray-300">
+          <div className="border-4 p-3 border-solid border-indigo-200 border-b-indigo-400 hover:border-indigo-500 rounded-2xl">
             <fieldset>
               <div className="flex justify-between">
                 <legend className="text-gray-700 font-serif font-semibold">
@@ -129,8 +129,8 @@ const ToDoSignUp = () => {
                   <input
                     type="checkbox"
                     name="Language"
-                    value="Telugu"
-                    id="Telugu"
+                    value="Other"
+                    id="Other"
                     onChange={(e) =>
                       setUser({
                         ...user,
@@ -139,12 +139,12 @@ const ToDoSignUp = () => {
                     }
                     className="peer"
                   />
-                  <span className="peer-checked:text-gray-800">Telugu</span>
+                  <span className="peer-checked:text-gray-800">Other</span>
                 </label>
               </div>
             </fieldset>
           </div>
-          <div className="text-center text-gray-700 font-serif font-bold border-4 p-3 border-solid border-indigo-200 border-b-indigo-400 hover:border-indigo-500 rounded-2xl bg-gray-300">
+          <div className="text-center text-gray-700 font-serif font-bold border-4 p-3 border-solid border-indigo-200 border-b-indigo-400 hover:border-indigo-500 rounded-2xl">
             <label for="email">Enter your email address:</label>
             <input
               type="email"
@@ -158,7 +158,7 @@ const ToDoSignUp = () => {
               required
             />
           </div>
-          <div className="border-4 p-3 border-solid border-indigo-200 border-b-indigo-400 hover:border-indigo-500 rounded-2xl bg-gray-300">
+          <div className="border-4 p-3 border-solid border-indigo-200 border-b-indigo-400 hover:border-indigo-500 rounded-2xl">
             <textarea
               className="w-full rounded-lg p-2 font-thin font-serif text-gray-500"
               rows="3"

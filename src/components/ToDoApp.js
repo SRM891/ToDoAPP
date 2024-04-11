@@ -29,7 +29,7 @@ const ToDoApp = ({ task, onDelete, onEdit }) => {
     <>
       <Header />
       <div className="h-full">
-        <h1 className="text-center m-2 text-4xl text-gray-300 font-thin">
+        <h1 className="text-center m-3 text-4xl text-white font-thin">
           List of To-Do's
         </h1>
         <ul className="relative text-center w-2/3 mb-14">
